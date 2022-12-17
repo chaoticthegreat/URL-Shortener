@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Url Shortener</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+      }
+
+      body {
+        font-family: 'Raleway',sans-serif;
+        background: #344a72;
+        color: #fff;
+        line-height: 1.8;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      #container {
+        margin: 30px auto;
+        max-width: 400px;
+        padding: 20px;
+      }
+
+      .form-wrap {
+        background: #fff;
+        padding: 15px 25px;
+        color: #333;
+
+      }
+
+      .form-wrap h1,
+      .form-wrap p {
+        text-align: center;
+      }
+
+      .form-wrap .form-group {
+        margin-top: 15px;
+      }
+
+      .form-wrap .form-group label {
+        display: block;
+        color #666;
+      }
+
+      .form-wrap .form-group input {
+        width 100%;
+        padding: 10px;
+        border: #ddd 1px solid;
+        border-radius: 5px;
+      }
+
+      .form-wrap button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        background: #49c1a2;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .form-wrap button:hover {
+        background: #37a08e;
+      }
+
+      .form-wrap .bottom-text {
+        font-size: 13px;
+        margin-top: 20px;
+      }
+
+      .give {
+        background: white;
+        color: black;
+      }
+
+      .give a {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="form-wrap">
+        <h1>Shorten Your Url</h1>
+        <p>It's free and only takes a minute</p>
+        <form method="POST" role="form" action="/">
+          <div class="form-group">
+            <label for="url">Enter a Url</label>
+            <input type="text" name="url" id="url" />
+          </div>
+          <div class="form-group">
+            <label for="custom-name">Custom Path(Not Required)</label>
+            <input type="text" name="custom-name" id="custom-name" />
+          </div>
+          <button type="submit" class="btn">Add</button>
+        </form>
+      </div>
+    </div>
+    {% if url != None %}
+    <div id = 'container'class="give">
+      <h1>Your url is: </h1>
+      <a href="{{url}}">{{url}}</a>
+      <p>{{warning}}</p>
+    </div>
+    {% endif %}
+  </body>
+</html>
